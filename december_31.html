@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            display: inline;
+            font-family: 'Monoton', cursive;
+            font-size: 100px;
+            color: rgb(255, 255, 255);
+            margin-top: 450px;
+        }
+        body {
+            margin-left: 450px;
+            margin-top: 450px;
+        }
+        html {
+            background-image: url(bg.jpeg);
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+    </style>
+    <title>New year</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var countDownDate = new Date("January 1, 2022 00:00:00").getTime();
+
+var nyfunc = setInterval(function() {
+    document.querySelector('body').innerHTML= ''
+    var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+
+    var days = Math.floor(timeleft / (1000*60*60*24));
+    var hours = Math.floor((timeleft % (1000*60*60*24)) / (1000*60*60));
+    var minutes = Math.floor((timeleft % (1000*60*60)) / (1000*60));
+    var secounds = Math.floor((timeleft % (1000*60)) / 1000);
+    let dayleft = document.createElement('h1')
+    dayleft.innerHTML = days
+    dayleft.innerHTML +=":"
+    let hoursleft = document.createElement('h1')
+    hoursleft.innerHTML = hours
+    hoursleft.innerHTML +=":"
+    let minutesleft = document.createElement('h1')
+    minutesleft.innerHTML = minutes
+    minutesleft.innerHTML +=":"
+    let secoundsleft = document.createElement('h1')
+    secoundsleft.innerHTML = secounds
+
+    document.querySelector('body').append(dayleft, hoursleft, minutesleft, secoundsleft)
+},1000)
+</script>
